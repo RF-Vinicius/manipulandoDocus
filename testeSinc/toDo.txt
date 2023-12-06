@@ -1,0 +1,16 @@
+[X] Ajustar validação de disciplina para que consuma com base na API
+[X] Conectar ao banco para fazer consultas
+[X] Verificar como ficará para casos com mais de um padrão
+[ ] Replicar solução de validação para fase
+[ ] Replicar solução de validaçãlo para áreas
+[ ] Tratar como será a validação de áreas considerando grupos
+
+
+[ ] Criar teste de quantidade de documentos enviados/quantos documentos deveriam ter enviado com base na planilha
+    [ ] Criar interface para o usuário passar as regras da sinc
+[ ] Criar relatório de teste
+
+[ ] Criar rotina de teste com base na regra que está no código
+    [ ] Consumir endpoint que está no gitLab
+[ ] Consultar com base no idObra os tokens para acessar API do autodoc e buscar listaMestra
+[ ] Validar quantidade de documentos por disciplina e verificar se está batendo com a obra

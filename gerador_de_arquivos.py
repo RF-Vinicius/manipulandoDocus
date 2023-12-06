@@ -5,12 +5,12 @@ import shutil
 import re
 
 folder = "C:/Users/vini9/OneDrive/Área de Trabalho/arquivosTeste"
-listaDisciplinas = ['ARQ', 'ELE', 'HID', 'EST', 'PAI', 'PIS', 'MET', 'DOC']
+listaDisciplinas = ['ARQ', 'ELE', 'HID', 'EST', 'PAI', 'PIS', 'MET', 'DOC', 'PCI']
 listaAreas = ['1PAV', '2PAV', '3PAV', '4PAV', '5PAV', '6PAV', '7PAV', '8PAV',
 '9PAV', '10PV', 'TIPO', 'TP02', 'TP03', 'TP04', 'COBE', 'TERR', 'PLAY', 'GERR'
 ]
 
-listaTorres = ['EX', 'LO']
+listFase = ['EX', 'LO', 'AP']
 
 listaSeparador = ['-']
 
@@ -24,12 +24,14 @@ def createArquivo(folder, quantidadeDocumentos, siglaObra):
 
         disciplina = random.choice(listaDisciplinas)
         numeroPlanta = str(random.randint(1000, 9000))
-        torre = random.choice(listaTorres)
-        area = random.choice(listaAreas)
+        #fase = random.choice(listFase)
+        fase = random.choice(listFase) if round(random.random()) == 1 else random.choice(listFase).lower()
+        #area = random.choice(listaAreas)
+        area = random.choice(listaAreas) if round(random.random()) == 1 else random.choice(listaAreas).lower()
         revisao = revisaoTipo + '0' + "5"
         separadorDocumento = random.choice(listaSeparador)
        
-        nomeDocumento = siglaObra + random.choice(listaSeparador) + disciplina + random.choice(listaSeparador) + numeroPlanta + random.choice(listaSeparador) + torre + random.choice(listaSeparador) + str(area) + random.choice(listaSeparador) + revisao
+        nomeDocumento = siglaObra + random.choice(listaSeparador) + disciplina + random.choice(listaSeparador) + numeroPlanta + random.choice(listaSeparador) + fase + random.choice(listaSeparador) + str(area) + random.choice(listaSeparador) + revisao
         for n in pasta:
             
             if len(n) > 4:
@@ -78,6 +80,7 @@ def excluir_documentos(folder):
 
 
 
-#createArquivo(folder, 5, 'CC')
-mudarRevisao(folder, -1)
+
+createArquivo(folder, 5, 'CODE')
+#mudarRevisao(folder, 1)
 #excluir_documentos(folder)
